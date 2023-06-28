@@ -1,0 +1,25 @@
+$gray: #9dabbb
+$bg-gray: #eeeeee
+
+//! Import bootstrap Function + Variable :
+@import "../../node_modules/bootstrap/scss/functions"
+@import "../../node_modules/bootstrap/scss/variables"
+
+//* Mes variables couleurs :
+$red: #ce1111
+$gray: #9dabbb
+$beige: #eeeeee
+
+//* Notre customisations des couleurs :
+$custom-colors: ("red" : $red ,"gray" : $gray ,"beige" : $beige )
+
+//* Fusionner les informations avec celles de bootstrap :
+$theme-colors: map-merge($theme-colors , $custom-colors)
+
+// & Notre valeur d'espace :
+$spacer: 1vw
+
+$custom-spacers: (0 : 0 ,1 : $spacer*1 ,2 : $spacer*2 ,3 : $spacer*3 ,4 : $spacer*4 , 5 : $spacer*5 ,6 : $spacer*6 ,7 : $spacer*7 ,8 : $spacer*20 )
+
+//& Fusionner et écrire nos valeurs d'espacement :
+$spacers: map-merge($spacers , $custom-spacers )
