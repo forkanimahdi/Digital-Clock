@@ -1,6 +1,7 @@
 # Digital-Clock
 
 To do 
+
 Alarm: Implement an alarm feature that allows users to set a specific time and triggers a notification or sound when the alarm goes off.
 
 Countdown Timer: Create a countdown timer functionality that enables users to set a duration and displays the remaining time in the digital clock format. Add a notification when the timer reaches zero.

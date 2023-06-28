@@ -13339,9 +13339,35 @@ textarea.form-control-lg {
 body {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(to right, black, #4b0082);
+  background-image: linear-gradient(to right, black, indigo);
   position: relative;
   margin: 0;
+}
+body .controle-panel {
+  height: 10vh;
+  border-bottom: 1px solid #532762;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+body .controle-panel div {
+  width: 19.5%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+body .controle-panel div:hover {
+  background-color: #532762;
+  border: 0.5px solid white;
+}
+body .controle-panel .active {
+  background-color: #532762;
+  border: 0.5px solid white;
 }
 
 .clock {
