@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>World Clock</title>
+  <style>
+    .clock {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock-container"></div>
+
+  <script>
+    function displayWorldClocks() {
+      const timeZones = ['America/New_York', 'Europe/London', 'Asia/Tokyo']; // Add more time zones as needed
+
+      const clockContainer = document.getElementById('clock-container');
+
+      timeZones.forEach(timeZone => {
+        const clock = document.createElement('div');
+        clock.className = 'clock';
+
+        const timeZoneName = timeZone.replace('_', ' '); // Format the time zone name for display
+        const time = new Date().toLocaleString('en-US', { timeZone });
+
+        clock.innerHTML = `<strong>${timeZoneName}:</strong> ${time}`;
+        clockContainer.appendChild(clock);
+      });
+    }
+
+    displayWorldClocks();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
