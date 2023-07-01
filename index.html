@@ -18,7 +18,7 @@
         <div class="alarm" id="alarm">Alarm</div>
         <div class="world-clock">World clock</div>
         <div class="stopwatch " id="stopwatch">Stopwatch</div>
-        <div class="timer">Timer</div>
+        <div class="timer" id="timer">Timer</div>
     </div>
     <!-- * tables -->
 
@@ -89,12 +89,30 @@
                 <button class="reset-stopwatch rounded-pill btn">Reset</button>
             </div>
         </div>
+        <!-- ! Timer / Countdown -->
+        <div class="timer-display display-div" id="timer">
+            <div class="text-white fs-3">Insert the value in seconds</div>
+            <div class="timer-pannel">
+                <input class="rounded-circle timer-seconds-input" min="0" type="number" value="0" name="" id="seconds">
+            </div>
+            <div class="btn start-timer bg-gradient text-white border border-1 border-white rounded-pill">
+                <div class="timeline"></div>
+                Start
+            </div>
+
+        </div>
 
 
 
 
 
-
+    </div>
+    <div class="credit d-flex align-items-start justify-content-center">
+        <div class="footer d-flex align-items-center justify-content-around">
+            <h6 class="text-white">Powered by</h6>
+            <img src="./public/img/logo.png" alt="">
+            <a href="" class="text-white text-decoration-none" >Forkani Mehdi</a>
+        </div>
     </div>
 
 

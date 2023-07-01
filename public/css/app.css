@@ -13364,16 +13364,16 @@ body {
 }
 .controle-panel div:hover {
   background-color: #532762;
-  border: 0.5px solid white;
+  border-bottom: 0.5px solid white;
 }
 
 .active {
   background-color: #532762;
-  border: 0.5px solid white;
+  border-bottom: 0.5px solid white;
 }
 
 .display {
-  height: 90vh;
+  height: 85vh;
 }
 
 .clock-display {
@@ -13410,7 +13410,6 @@ body {
   text-align: center;
   color: white;
   text-shadow: 0 0 8px purple, 0 0 8px purple;
-  animation: flicker 1.5s infinite alternate;
 }
 
 .alarm-display {
@@ -13532,7 +13531,6 @@ body {
   position: relative;
   overflow: hidden;
   display: none;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -13613,6 +13611,56 @@ body {
 .stopwatch-display .stopwatch-pannel .reset-stopwatch:hover,
 .stopwatch-display .stopwatch-pannel .lap-stopwatch:hover {
   background-color: indianred;
+}
+
+.timer-display {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.timer-display .timer-pannel input {
+  width: 30vw;
+  height: 60vh;
+  text-align: center;
+  font-size: 5vw;
+  background-color: transparent;
+  color: white;
+  border: 3px solid purple;
+}
+.timer-display .start-timer {
+  width: 15%;
+  position: relative;
+  overflow: hidden;
+}
+.timer-display .start-timer:hover {
+  background-color: #532762;
+}
+.timer-display .start-timer .timeline {
+  width: 100%;
+  height: 100%;
+  background-color: indianred;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.credit {
+  height: 5vh;
+}
+.credit .footer {
+  width: 20%;
+  height: 75%;
+}
+.credit .footer img {
+  width: 2vw;
+}
+.credit .footer a {
+  margin-bottom: 2px;
 }
 
 /*# sourceMappingURL=app.css.map */

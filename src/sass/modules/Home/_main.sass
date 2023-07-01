@@ -1,5 +1,5 @@
 .display
-    height: 90vh
+    height: 85vh
 
 .clock-display
     height: 100%
@@ -33,7 +33,6 @@
         text-align: center
         color: white
         text-shadow: 0 0 8px purple, 0 0 8px purple
-        animation: flicker 1.5s infinite alternate
 
 .alarm-display
     height: 100%
@@ -139,7 +138,7 @@
     position: relative
     overflow: hidden
     display: none
-    display: flex
+    // display: flex
     flex-direction: column
     align-items: center
     justify-content: space-around
@@ -208,3 +207,37 @@
             font-weight: bold
             &:hover
                 background-color: indianred
+.timer-display
+    height: 100%
+    position: relative
+    overflow: hidden
+    display: none
+    // display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+    .timer-pannel
+        input
+            width: 30vw
+            height: 60vh
+            text-align: center
+            font-size: 5vw
+            background-color: transparent
+            color: white
+            border: 3px solid purple
+    .start-timer
+        width: 15%
+        position: relative
+        overflow: hidden
+        &:hover
+            background-color: $dark-pink
+        .timeline
+            width: 100%
+            height: 100%
+            background-color: indianred
+            position: absolute
+            top: 0
+            left: 0
+            display: none
+            
+

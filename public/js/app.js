@@ -26,6 +26,9 @@ let lapMin = document.querySelector(".lap-min")
 let lapDiv = document.querySelector(".lape-div")
 let lapHour = document.querySelector(".lap-hour")
 let watchLap = document.querySelector(".watch-lap")
+let timerInput = document.querySelector(".timer-seconds-input")
+let startTimer = document.querySelector(".start-timer")
+let timeline = document.querySelector(".timeline")
 let tour = 1
 let lapseconds = 0
 let lapminuts = 0
@@ -390,7 +393,7 @@ resetStopwatch.addEventListener("click", () => {
         let interval = () => {
             makingstopwatch()
         };
-        
+
         interval = setInterval(interval, 1000)
 
 
@@ -425,3 +428,36 @@ resetStopwatch.addEventListener("click", () => {
 
 })
 
+//! timer / Countdown
+
+startTimer.addEventListener("click", () => {
+
+    let counter = parseInt(timerInput.value)
+    timeline.style.transition = `${counter}s ease-out`
+
+    let timer = () => {
+        timeline.style.left = "-100%"
+        if (timerInput.value > 0) {
+            counter--
+            timerInput.value = counter
+        } else if (timerInput.value == 0) {
+            clearInterval(timer)
+            notif = new Notification(`Alarm`, {
+                body: `Your Timer is Up`,
+                icon: './public/img/alarm.png' //  icon of notification
+            })
+            startTimer.style.width = ""
+            timeline.style.display = "none"
+            timeline.style.left = "0%"
+
+        }
+    }
+
+    if (timerInput.value > 0) {
+        timer = setInterval(timer, 1000)
+        timeline.style.display = "block"
+        startTimer.style.width = "100%"
+
+    }
+
+})
