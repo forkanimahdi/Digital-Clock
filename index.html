@@ -12,16 +12,96 @@
 
 <body>
 
+    <!-- *panel controle -->
     <div class="controle-panel">
-        <div class="clockwatch active">Clock</div>
-        <div class="alarm">Alarm</div>
+        <div class="clockwatch active " id="clock">Clock</div>
+        <div class="alarm" id="alarm">Alarm</div>
         <div class="world-clock">World clock</div>
-        <div class="stopwatch">Stopwatch</div>
+        <div class="stopwatch " id="stopwatch">Stopwatch</div>
         <div class="timer">Timer</div>
     </div>
+    <!-- * tables -->
 
-    <!-- <h1 class="clock"></h1>
-    <h3 class="calendar"> <i class="fa-solid fa-calendar-days me-2"></i><span class="date"></span></h3> -->
+    <div class="display">
+        <!-- ! clock -->
+        <div class="clock-display display-div" id="clock">
+
+            <div class="">
+                <h1 class="clock"></h1>
+                <h3 class="calendar"> <i class="fa-solid fa-calendar-days me-2"></i><span class="date"></span></h3>
+                <h3 class="local mt-3"> Weather in <span class="city"></span> <span class="temperature"></span>°C <i
+                        class="fa-solid fa-temperature-three-quarters"></i>, and its <span class="state"> </span> </h3>
+            </div>
+
+        </div>
+        <!-- ! Alarm -->
+        <div class="display-div alarm-display" id="alarm">
+
+            <div class="set-time-div d-flex align-items-center ">
+                <input type="text" placeholder="Alarm name" maxlength="15" title="Alarm name" class="alarm-name">
+                <input type="time" name="" id="" title="Set time" class="alarm-time">
+                <button class="alarm-valid d-flex align-items-center justify-content-center"> Done </button>
+                <button class="alarm-cancel d-flex align-items-center justify-content-center">Cancel</button>
+            </div>
+            <button
+                class="btn set-btn text-white d-flex border border-1 border-white rounded-pill align-items-center justify-content-around set-alarm"><i
+                    class="fa-solid fa-plus-circle"></i> Set a new alarm</button>
+
+
+            <div class="all-alarms">
+
+            </div>
+
+        </div>
+        <!-- ! world clock -->
+
+
+        <!-- ! stopwatch -->
+        <div class="stopwatch-display display-div" id="stopwatch">
+            <div class="stopwatch-timer">
+                <span class="stopwatch-hour">00</span>
+                :
+                <span class="stopwatch-min">00</span>
+                :
+                <span class="stopwatch-sec">00</span>
+            </div>
+
+            <div class="watch-lap mb-3">
+                <span class="lap-hour">00</span>
+                :
+                <span class="lap-min">00</span>
+                :
+                <span class="lap-sec">00</span>
+            </div>
+
+            <div class="lape-div">
+
+                <div class="lape-header d-flex align-items-center justify-content-around text-gray">
+                    <h6 class="me-5">Tour</h6>
+                    <h6 class="me-5">Lape</h6>
+                    <h6 class="me-4">Overall</h6>
+                </div>
+
+
+            </div>
+            <div class="stopwatch-pannel">
+                <button class="start-stopwatch rounded-pill btn">Start</button>
+                <button class="reset-stopwatch rounded-pill btn">Reset</button>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
 
     <script src="./public/js/app.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

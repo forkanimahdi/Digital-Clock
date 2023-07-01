@@ -4,26 +4,26 @@ body
     background-image: linear-gradient(to right, black, indigo)
     position: relative
     margin: 0
-    .controle-panel
-        height: 10vh
-        border-bottom: 1px solid $dark-pink
+.controle-panel
+    height: 10vh
+    border-bottom: 1px solid $dark-pink
+    display: flex
+    align-items: center
+    justify-content: space-around
+    color: white
+    div
+        width: 19.5%
+        height: 100%
+        text-align: center
+        cursor: pointer
         display: flex
         align-items: center
-        justify-content: space-around
-        color: white
-        div
-            width: 19.5%
-            height: 100%
-            text-align: center
-            cursor: pointer
-            display: flex
-            align-items: center
-            justify-content: center
-            transition: 0.5s ease
-            &:hover
-                background-color: $dark-pink
-                border: 0.5px solid white
-
-        .active
+        justify-content: center
+        transition: 0.5s ease
+        &:hover
             background-color: $dark-pink
             border: 0.5px solid white
+.active
+    background-color: $dark-pink
+    border: 0.5px solid white
+

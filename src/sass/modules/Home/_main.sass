@@ -1,18 +1,210 @@
-.clock
-    font-family: digital
-    color: white
-    font-size: 10vw
-    width: 100%
-    text-align: center
-    color: white
-    text-shadow: 0 0 8px purple, 0 0 8px purple
-    animation: flicker 1.5s infinite alternate
-    letter-spacing: 1.5vw
-.calendar
-    font-size: 1.2vw
-    letter-spacing: 0.8vw
-    width: 100%
-    text-align: center
-    color: white
-    text-shadow: 0 0 8px purple, 0 0 8px purple
-    animation: flicker 1.5s infinite alternate
+.display
+    height: 90vh
+
+.clock-display
+    height: 100%
+    display: flex
+    // display: none
+    align-items: center
+    justify-content: center
+    .clock
+        font-family: digital
+        color: white
+        font-size: 10vw
+        width: 100%
+        text-align: center
+        color: white
+        text-shadow: 0 0 8px purple, 0 0 8px purple
+        animation: flicker 1.5s infinite alternate
+        letter-spacing: 1.5vw
+    .calendar
+        font-size: 2vw
+        font-family: digital
+        letter-spacing: 0.8vw
+        width: 100%
+        text-align: center
+        color: white
+        text-shadow: 0 0 8px purple, 0 0 8px purple
+        animation: flicker 1.5s infinite alternate
+    .local
+        font-size: 1.5vw
+        letter-spacing: 0.5vw
+        width: 100%
+        text-align: center
+        color: white
+        text-shadow: 0 0 8px purple, 0 0 8px purple
+        animation: flicker 1.5s infinite alternate
+
+.alarm-display
+    height: 100%
+    position: relative
+    overflow: hidden
+    display: none
+    .set-btn,
+    .cancel-btn
+        width: 20%
+        height: 6vh
+        position: absolute
+        left: 50%
+        transition: 0.5s ease
+        transform: translate(-50%)
+        margin-top: 3vh
+        &:hover
+            background-color: $dark-pink
+    .cancel-btn
+        top: 10%
+        display: none
+
+    .set-time-div
+        height: 6vh
+        position: absolute
+        left: 50%
+        top: -20%
+        transform: translate(-50%)
+        margin-top: 3vh
+
+        .alarm-name
+            height: 100%
+            background-color: transparent
+            border: 1px solid white
+            color: white
+            font-size: 1.3vw
+            text-align: center
+            border-radius: 50px 0 0 50px
+        .alarm-time
+            height: 100%
+            padding: 1vw
+            letter-spacing: 0.3vw
+            background-color: transparent
+            border: 1px solid white
+            color: white
+        .alarm-valid
+            height: 100%
+            padding: 1vw
+            background-color: transparent
+            border: 1px solid white
+            color: white
+            &:hover
+                background-color: $dark-pink
+        .alarm-cancel
+            height: 100%
+            padding: 1vw
+            background-color: transparent
+            border: 1px solid white
+            color: white
+            border-radius: 0 50px 50px 0
+            &:hover
+                background-color: black
+    .all-alarms
+        width: 40%
+        height: 80%
+        position: absolute
+        left: 50%
+        transform: translate(-50%)
+        top: 15%
+        overflow-x: hidden
+        overflow-y: auto
+        .tach
+            width: 100%
+            height: 10vh
+            padding: 2vh
+            border-bottom: 1px solid gray
+            display: flex
+            align-items: center
+            justify-content: space-around
+            transition: 0.5s ease
+            position: relative
+
+            .tach-time
+                color: #9329d4
+            .tach-name
+                width: 45%
+            .toggle
+                width: 15%
+                background-color: $dark-pink
+                height: 4vh
+                // border: 0.5px solid white
+                cursor: pointer
+                transition: 0.5s ease
+                display: flex
+                align-items: center
+                justify-content: center
+                font-size: 0.8vw
+                &:hover
+                    border: 1px solid white
+                    background-color: indigo
+                    color: white
+.stopwatch-display
+    height: 100%
+    position: relative
+    overflow: hidden
+    display: none
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+    .stopwatch-timer
+        font-family: digital
+        color: white
+        font-size: 7vw
+        width: 100%
+        text-align: center
+        color: white
+        text-shadow: 0 0 8px purple, 0 0 8px purple
+        letter-spacing: 1.3vw
+    .watch-lap
+        font-family: digital
+        color: white
+        font-size: 1.5vw
+        width: 100%
+        text-align: center
+        color: white
+        text-shadow: 0 0 8px purple, 0 0 8px purple
+        letter-spacing: 0.3vw
+    .lape-div
+        height: 50%
+        width: 40%
+        overflow-y: auto
+        font-family: digital
+
+        .lape-header
+            height: 10%
+            width: 100%
+            border-bottom: 1px solid white
+        .lape
+            height: 20%
+            border-bottom: 1px solid gray
+            color: white
+            display: flex
+            align-items: center
+            justify-content: space-around
+            letter-spacing: 0.3vw
+
+    .stopwatch-pannel
+        height: 15%
+        width: 50%
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        .start-stopwatch,
+        .stop-stopwatch,
+        .resume-stopwatch
+            width: 30%
+            height: 80%
+            background-color: indigo
+            border: 1px solid white
+            color: white
+            font-weight: bold
+            &:hover
+                background-color: indianred
+        .stop-stopwatch
+            background-color: #941919
+        .reset-stopwatch,
+        .lap-stopwatch
+            width: 30%
+            height: 80%
+            background-color: wheat
+            border: 1px solid white
+            font-weight: bold
+            &:hover
+                background-color: indianred
