@@ -155,7 +155,7 @@ alarmSetBtn.addEventListener("click", setAndCancel)
 //* cancel button function
 function cancelInput() {
     setTimeDiv.style.transition = "0.5s"
-    setTimeDiv.style.top = "-10%"
+    setTimeDiv.style.top = "-20%"
     setTimeout(() => {
         alarmSetBtn.classList.remove("d-none")
     }, 300);
@@ -497,7 +497,7 @@ startTimer.addEventListener("click", () => {
             timerInput.value = counter
         } else if (timerInput.value == 0) {
             clearInterval(timer)
-            notif = new Notification(`Alarm`, {
+           let notif = new Notification(`Alarm`, {
                 body: `Your Timer is Up`,
                 icon: './public/img/alarm.png' //  icon of notification
             })

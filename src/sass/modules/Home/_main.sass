@@ -3,8 +3,8 @@
 
 .clock-display
     height: 100%
-    // display: flex
-    display: none
+    display: flex
+    // display: none
     align-items: center
     justify-content: center
     .clock
@@ -135,11 +135,18 @@
                     color: white
 .world-display
     height: 98%
+    width: 100%
     overflow-y: auto
+    display: none
+    align-items: center
+    justify-content: center
+    flex-direction: column
     .worldetable-header
+        width: 100%
         height: 10%
         border-bottom: 1px solid gray
     .othertimezonediv
+        width: 100%
         height: 15%
         border-bottom: 1px solid purple
         color: white
@@ -257,3 +264,163 @@
             top: 0
             left: 0
             display: none
+@media screen and (max-width:425px)
+    .display
+        height: 40rem
+    .clock-display
+        height: 100%
+        .clock
+            font-size: 20vw
+            width: 100%
+            letter-spacing: 1.5vw
+        .calendar
+            font-size: 5vw
+            width: 100%
+        .local
+            font-size: 4vw
+            letter-spacing: 0.5vw
+            width: 100%
+    .alarm-display
+        height: 100%
+        .set-btn,
+        .cancel-btn
+            width: 50%
+            height: 3rem
+            position: absolute
+            left: 50%
+            transition: 0.5s ease
+            transform: translate(-50%)
+            margin-top: 1.5rem
+            &:hover
+                background-color: $dark-pink
+        .cancel-btn
+            top: 10%
+            display: none
+
+        .set-time-div
+            width: 100%
+            height: 3rem
+            top: -20%
+            .alarm-name
+                height: 100%
+                width: 35%
+                background-color: transparent
+                border: 1px solid white
+                color: white
+                font-size: 3vw
+                text-align: center
+                border-radius: 50px 0 0 50px
+                &:focus
+                    border: none
+            .alarm-time
+                height: 100%
+                width: 20%
+                padding: 1vw
+                letter-spacing: 0.3vw
+                background-color: transparent
+                border: 1px solid white
+                color: white
+            .alarm-valid
+                height: 100%
+                width: 25%
+                padding: 1vw
+                background-color: transparent
+                border: 1px solid white
+                color: white
+                &:hover
+                    background-color: $dark-pink
+            .alarm-cancel
+                height: 100%
+                width: 20%
+                padding: 1vw
+                border: 1px solid white
+                color: white
+                border-radius: 0 50px 50px 0
+                &:hover
+                    background-color: black
+        .all-alarms
+            width: 100%
+            height: 80%
+            .tach
+                width: 100%
+                height: 5rem
+                padding: 1rem
+                .tach-name
+                    width: 45%
+                .toggle
+                    width: 20%
+                    height: 2rem
+                    transition: 0s ease
+                    font-size: 3vw
+                    &:hover
+                        border: 1px solid white
+                        background-color: indigo
+                        color: white
+    .world-display
+        .othertimezonediv
+            width: 100%
+            height: 15%
+            letter-spacing: 0.2vw
+            div
+                width: 33%
+                border-left: 1px solid purple
+                border-right: 1px solid purple
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+                text-align: center
+                font-size: 3vw
+    .stopwatch-display
+        .stopwatch-timer
+            font-family: digital
+            color: white
+            font-size: 15vw
+            letter-spacing: 1.3vw
+        .watch-lap
+            font-family: digital
+            color: white
+            font-size: 6vw
+        .lape-div
+            height: 50%
+            width: 100%
+            overflow-y: auto
+            font-family: digital
+            .lape-header
+                height: 10%
+                width: 100%
+                border-bottom: 1px solid white
+            .lape
+                height: 20%
+        .stopwatch-pannel
+            height: 15%
+            width: 100%
+            .start-stopwatch,
+            .stop-stopwatch,
+            .resume-stopwatch
+                width: 40%
+                height: 50%
+            .reset-stopwatch,
+            .lap-stopwatch
+                width: 40%
+                height: 50%
+    .timer-display
+        .timer-pannel
+            input
+                width: 50vw
+                height: 12rem
+                text-align: center
+                font-size: 20vw
+                &:focus
+                    outline:1px solid transparent
+        .start-timer
+            width: 40%
+            .timeline
+                width: 100%
+                height: 100%
+                background-color: indianred
+                position: absolute
+                top: 0
+                left: 0
+                display: none
+

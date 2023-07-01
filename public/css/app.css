@@ -13340,6 +13340,7 @@ body {
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(to right, black, indigo);
+  overflow-y: hidden;
   position: relative;
   margin: 0;
 }
@@ -13372,13 +13373,34 @@ body {
   border-bottom: 0.5px solid white;
 }
 
+@media screen and (max-width: 425px) {
+  .controle-panel {
+    height: 4rem;
+    border-bottom: 1px solid #532762;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+  }
+  .controle-panel div {
+    width: 19.5%;
+    height: 100%;
+    text-align: center;
+    font-size: 3vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0s ease;
+  }
+}
 .display {
   height: 85vh;
 }
 
 .clock-display {
   height: 100%;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -13528,13 +13550,20 @@ body {
 
 .world-display {
   height: 98%;
+  width: 100%;
   overflow-y: auto;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .world-display .worldetable-header {
+  width: 100%;
   height: 10%;
   border-bottom: 1px solid gray;
 }
 .world-display .othertimezonediv {
+  width: 100%;
   height: 15%;
   border-bottom: 1px solid purple;
   color: white;
@@ -13672,6 +13701,198 @@ body {
   display: none;
 }
 
+@media screen and (max-width: 425px) {
+  .display {
+    height: 40rem;
+  }
+  .clock-display {
+    height: 100%;
+  }
+  .clock-display .clock {
+    font-size: 20vw;
+    width: 100%;
+    letter-spacing: 1.5vw;
+  }
+  .clock-display .calendar {
+    font-size: 5vw;
+    width: 100%;
+  }
+  .clock-display .local {
+    font-size: 4vw;
+    letter-spacing: 0.5vw;
+    width: 100%;
+  }
+  .alarm-display {
+    height: 100%;
+  }
+  .alarm-display .set-btn,
+  .alarm-display .cancel-btn {
+    width: 50%;
+    height: 3rem;
+    position: absolute;
+    left: 50%;
+    transition: 0.5s ease;
+    transform: translate(-50%);
+    margin-top: 1.5rem;
+  }
+  .alarm-display .set-btn:hover,
+  .alarm-display .cancel-btn:hover {
+    background-color: #532762;
+  }
+  .alarm-display .cancel-btn {
+    top: 10%;
+    display: none;
+  }
+  .alarm-display .set-time-div {
+    width: 100%;
+    height: 3rem;
+    top: -20%;
+  }
+  .alarm-display .set-time-div .alarm-name {
+    height: 100%;
+    width: 35%;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+    border-radius: 50px 0 0 50px;
+  }
+  .alarm-display .set-time-div .alarm-name:focus {
+    border: none;
+  }
+  .alarm-display .set-time-div .alarm-time {
+    height: 100%;
+    width: 20%;
+    padding: 1vw;
+    letter-spacing: 0.3vw;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+  }
+  .alarm-display .set-time-div .alarm-valid {
+    height: 100%;
+    width: 25%;
+    padding: 1vw;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+  }
+  .alarm-display .set-time-div .alarm-valid:hover {
+    background-color: #532762;
+  }
+  .alarm-display .set-time-div .alarm-cancel {
+    height: 100%;
+    width: 20%;
+    padding: 1vw;
+    border: 1px solid white;
+    color: white;
+    border-radius: 0 50px 50px 0;
+  }
+  .alarm-display .set-time-div .alarm-cancel:hover {
+    background-color: black;
+  }
+  .alarm-display .all-alarms {
+    width: 100%;
+    height: 80%;
+  }
+  .alarm-display .all-alarms .tach {
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+  }
+  .alarm-display .all-alarms .tach .tach-name {
+    width: 45%;
+  }
+  .alarm-display .all-alarms .tach .toggle {
+    width: 20%;
+    height: 2rem;
+    transition: 0s ease;
+    font-size: 3vw;
+  }
+  .alarm-display .all-alarms .tach .toggle:hover {
+    border: 1px solid white;
+    background-color: indigo;
+    color: white;
+  }
+  .world-display .othertimezonediv {
+    width: 100%;
+    height: 15%;
+    letter-spacing: 0.2vw;
+  }
+  .world-display .othertimezonediv div {
+    width: 33%;
+    border-left: 1px solid purple;
+    border-right: 1px solid purple;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3vw;
+  }
+  .stopwatch-display .stopwatch-timer {
+    font-family: digital;
+    color: white;
+    font-size: 15vw;
+    letter-spacing: 1.3vw;
+  }
+  .stopwatch-display .watch-lap {
+    font-family: digital;
+    color: white;
+    font-size: 6vw;
+  }
+  .stopwatch-display .lape-div {
+    height: 50%;
+    width: 100%;
+    overflow-y: auto;
+    font-family: digital;
+  }
+  .stopwatch-display .lape-div .lape-header {
+    height: 10%;
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
+  .stopwatch-display .lape-div .lape {
+    height: 20%;
+  }
+  .stopwatch-display .stopwatch-pannel {
+    height: 15%;
+    width: 100%;
+  }
+  .stopwatch-display .stopwatch-pannel .start-stopwatch,
+  .stopwatch-display .stopwatch-pannel .stop-stopwatch,
+  .stopwatch-display .stopwatch-pannel .resume-stopwatch {
+    width: 40%;
+    height: 50%;
+  }
+  .stopwatch-display .stopwatch-pannel .reset-stopwatch,
+  .stopwatch-display .stopwatch-pannel .lap-stopwatch {
+    width: 40%;
+    height: 50%;
+  }
+  .timer-display .timer-pannel input {
+    width: 50vw;
+    height: 12rem;
+    text-align: center;
+    font-size: 20vw;
+  }
+  .timer-display .timer-pannel input:focus {
+    outline: 1px solid transparent;
+  }
+  .timer-display .start-timer {
+    width: 40%;
+  }
+  .timer-display .start-timer .timeline {
+    width: 100%;
+    height: 100%;
+    background-color: indianred;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+}
 .credit {
   height: 5vh;
 }
@@ -13693,6 +13914,31 @@ body {
   bottom: 1.5vh;
   left: 97%;
   cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .credit {
+    height: 2.5rem;
+  }
+  .credit .footer {
+    width: 60%;
+    height: 75%;
+  }
+  .credit .footer img {
+    width: 8vw;
+  }
+  .credit .footer a {
+    margin-bottom: 2px;
+  }
+  .credit .fullscreen {
+    width: 100%;
+    color: white;
+    text-shadow: 0 0 8px purple, 0 0 8px purple;
+    position: fixed;
+    bottom: 2vh;
+    left: 94%;
+    cursor: pointer;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

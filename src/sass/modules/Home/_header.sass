@@ -2,6 +2,7 @@ body
     width: 100%
     height: 100vh
     background-image: linear-gradient(to right, black, indigo)
+    overflow-y: hidden
     position: relative
     margin: 0
 .controle-panel
@@ -26,4 +27,21 @@ body
 .active
     background-color: $dark-pink
     border-bottom: 0.5px solid white
-
+@media screen and (max-width:425px)
+    .controle-panel
+        height: 4rem
+        border-bottom: 1px solid $dark-pink
+        display: flex
+        align-items: center
+        justify-content: space-around
+        color: white
+        div
+            width: 19.5%
+            height: 100%
+            text-align: center
+            font-size: 3vw
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: 0s ease
