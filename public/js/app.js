@@ -29,6 +29,8 @@ let watchLap = document.querySelector(".watch-lap")
 let timerInput = document.querySelector(".timer-seconds-input")
 let startTimer = document.querySelector(".start-timer")
 let timeline = document.querySelector(".timeline")
+let fullscreen = document.querySelector(".fullscreen")
+let worldclockTable = document.querySelector(".world-display")
 let tour = 1
 let lapseconds = 0
 let lapminuts = 0
@@ -37,8 +39,6 @@ let lapHours = 0
 
 let localedweather = localStorage.getItem("weatherDigital")
 local.innerHTML = localedweather
-
-
 
 
 //* Check notification availability
@@ -266,6 +266,61 @@ function notifyMe(tachTime, tachName, interval) {
 // ! world clock
 
 
+function worldClock() {
+    let capitals = [
+        { name: "Rabat", offset: 0, country: "Morocco" },
+        { name: "New York", offset: -4, country: "United States" },
+        { name: "Tokyo", offset: 9, country: "Japane" },
+        { name: "Paris", offset: 2, country: "French" },
+        { name: "Hong Kong", offset: 8, country: "China" },
+        { name: "London", offset: 0, country: "United Kingdom" },
+        { name: "Mecca", offset: 3, country: "Kingdom Saudi Arabia" },
+        { name: "Cairo", offset: 2, country: "Egypt" },
+        { name: "Ottawa", offset: -4, country: "Canada" }, // Capital of Canada
+        { name: "Toronto", offset: -4, country: "Canada" }, // Capital of Ontario, Canada
+        // Add more capitals here...
+    ];
+
+    function formatTime(date) {
+        return date.toLocaleTimeString("en-US", { timeStyle: "medium" });
+    }
+
+    function getCapitalTime(capital) {
+        let currentDate = new Date();
+        let utcOffset = capital.offset * 60;
+        let capitalTime = new Date(currentDate.getTime() + utcOffset * 60 * 1000);
+        return formatTime(capitalTime);
+    }
+
+    capitals.forEach(capital => {
+        let capitalTime = getCapitalTime(capital);
+        let theTimezone = document.createElement("div")
+        theTimezone.classList.add("othertimezonediv")
+        let cityName = document.createElement("div")
+        cityName.classList.add("cityname")
+        cityName.textContent = capital.name
+        theTimezone.appendChild(cityName)
+        let citytime = document.createElement("div")
+        citytime.classList.add("citytime")
+        citytime.textContent = capitalTime
+        theTimezone.appendChild(citytime)
+        let countryname = document.createElement("div")
+        countryname.classList.add("countryname")
+        countryname.textContent = capital.country
+        theTimezone.appendChild(countryname)
+        worldclockTable.appendChild(theTimezone)
+
+    });
+
+}
+
+setInterval(() => {
+    let allcountrys = document.querySelectorAll(".othertimezonediv")
+    allcountrys.forEach(element => {
+        element.remove()
+    });
+    worldClock()
+}, 1000);
 
 //! stop watch
 function startWatch() {
@@ -461,3 +516,36 @@ startTimer.addEventListener("click", () => {
     }
 
 })
+
+fullscreen.addEventListener("click", () => {
+    let elem = document.documentElement; // Get the root element of the document
+
+    if (elem.requestFullscreen) {
+        // Standard syntax for fullscreen API
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+        // Firefox-specific syntax
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+        // Chrome, Safari, and Opera-specific syntax
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        // Microsoft Edge-specific syntax
+        elem.msRequestFullscreen();
+    }
+
+    fullscreen.style.display = "none"
+    controlPanel.style.marginTop = "-11vh"
+
+    document.addEventListener('keydown', (event) => {
+        if (event.keyCode === 27 || event.key === 'Escape') {
+            fullscreen.style.display = "block"
+            controlPanel.style.marginTop = "0"
+
+        }
+    });
+
+})
+
+
+

@@ -13378,7 +13378,7 @@ body {
 
 .clock-display {
   height: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -13526,6 +13526,29 @@ body {
   color: white;
 }
 
+.world-display {
+  height: 98%;
+  overflow-y: auto;
+}
+.world-display .worldetable-header {
+  height: 10%;
+  border-bottom: 1px solid gray;
+}
+.world-display .othertimezonediv {
+  height: 15%;
+  border-bottom: 1px solid purple;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 8px purple, 0 0 8px purple;
+  justify-content: space-around;
+  letter-spacing: 0.3vw;
+}
+.world-display .othertimezonediv div {
+  width: 33%;
+  text-align: center;
+}
+
 .stopwatch-display {
   height: 100%;
   position: relative;
@@ -13624,7 +13647,7 @@ body {
 }
 .timer-display .timer-pannel input {
   width: 30vw;
-  height: 60vh;
+  height: 50vh;
   text-align: center;
   font-size: 5vw;
   background-color: transparent;
@@ -13661,6 +13684,15 @@ body {
 }
 .credit .footer a {
   margin-bottom: 2px;
+}
+.credit .fullscreen {
+  width: 100%;
+  color: white;
+  text-shadow: 0 0 8px purple, 0 0 8px purple;
+  position: fixed;
+  bottom: 1.5vh;
+  left: 97%;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=app.css.map */

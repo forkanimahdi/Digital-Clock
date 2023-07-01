@@ -3,8 +3,8 @@
 
 .clock-display
     height: 100%
-    display: flex
-    // display: none
+    // display: flex
+    display: none
     align-items: center
     justify-content: center
     .clock
@@ -133,6 +133,24 @@
                     border: 1px solid white
                     background-color: indigo
                     color: white
+.world-display
+    height: 98%
+    overflow-y: auto
+    .worldetable-header
+        height: 10%
+        border-bottom: 1px solid gray
+    .othertimezonediv
+        height: 15%
+        border-bottom: 1px solid purple
+        color: white
+        display: flex
+        align-items: center
+        text-shadow: 0 0 8px purple, 0 0 8px purple
+        justify-content: space-around
+        letter-spacing: 0.3vw
+        div
+            width: 33%
+            text-align: center
 .stopwatch-display
     height: 100%
     position: relative
@@ -219,7 +237,7 @@
     .timer-pannel
         input
             width: 30vw
-            height: 60vh
+            height: 50vh
             text-align: center
             font-size: 5vw
             background-color: transparent
@@ -239,5 +257,3 @@
             top: 0
             left: 0
             display: none
-            
-
